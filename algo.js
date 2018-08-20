@@ -1,15 +1,21 @@
-// Compute the sum of all integers that are multiples of 9, from 1 to 250. Enter the result of your computation in the text box below 
+/*CONVERT CELSIUS TO FAHRENHEIT
+The algorithm to convert from Celsius to Fahrenheit is the temperature in Celsius times 9/5, plus 32.
 
-const sumMultiplesOfNine = (x) => {
- let 
-  sum = 0, 
-  i;
- for(i = 0; i <= x; i++ ){
-     if(i % 9 == 0){
-         sum += i
-     }
- }
- return sum   
-}
+You are given a variable celsius representing a temperature in Celsius. Use the variable fahrenheit already defined and assign it the Fahrenheit temperature equivalent to the given Celsius temperature. Use the algorithm mentioned above to help convert the Celsius temperature to Fahrenheit   */
 
-console.log(sumMultiplesOfNine(250));
+//================================================= ANSWER
+
+function convertToF(celsius) {
+    let fahrenheit = (celsius * 9/5) + 32;
+    return fahrenheit;
+  }
+  
+  console.log(convertToF(30));
+
+//====================================================   TEST
+// convertToF(0) should return a number
+// convertToF(-30) should return a value of -22
+// convertToF(-10) should return a value of 14
+// convertToF(0) should return a value of 32
+// convertToF(20) should return a value of 68
+// convertToF(30) should return a value of 86
