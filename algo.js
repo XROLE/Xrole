@@ -1,15 +1,17 @@
-// Compute the sum of all integers that are multiples of 9, from 1 to 250. Enter the result of your computation in the text box below 
-
-const sumMultiplesOfNine = (x) => {
- let 
-  sum = 0, 
-  i;
- for(i = 0; i <= x; i++ ){
-     if(i % 9 == 0){
-         sum += i
-     }
- }
- return sum   
-}
-
-console.log(sumMultiplesOfNine(250));
+//==================================================================== TRUNCATING A STRING
+// Truncate a string (first argument) if it is longer than the given maximum string length (second argument). Return the truncated string with a ... ending.
+// Remember to use Read-Search-Ask if you get stuck. Write your own code.
+//=============================================================================== ANSWER
+function truncateString(str, num) {
+    // PLEASE SOLVE IT YOURSELF
+    return str;
+  }
+  
+  truncateString("A-tisket a-tasket A green and yellow basket", 8);
+// =============================================================================== TEST
+// truncateString("A-tisket a-tasket A green and yellow basket", 8) should return "A-tisket...".
+// truncateString("Peter Piper picked a peck of pickled peppers", 11) should return "Peter Piper...".
+// truncateString("A-tisket a-tasket A green and yellow basket", "A-tisket a-tasket A green and yellow basket".length) should return "A-tisket a-tasket A green and yellow basket".
+// truncateString("A-tisket a-tasket A green and yellow basket", "A-tisket a-tasket A green and yellow basket".length + 2) should return "A-tisket a-tasket A green and yellow basket".
+// truncateString("A-", 1) should return "A...".
+// truncateString("Absolutely Longer", 2) should return "Ab...".
