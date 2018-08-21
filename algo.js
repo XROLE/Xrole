@@ -7,7 +7,7 @@
 function largestOfFour(arr) {
     let newArray = [];
     let counter = 0;
-    arr.foreach((childArray) => {
+    arr.forEach((childArray) => {
         return childArray;
     })
 
