@@ -1,17 +1,25 @@
-//==================================================================== TRUNCATING A STRING
-// Truncate a string (first argument) if it is longer than the given maximum string length (second argument). Return the truncated string with a ... ending.
+//==================================================================== TITLE CASE A SENTENCE
+// Return the provided string with the first letter of each word capitalized. Make sure the rest of the word is in lower case.
+// For the purpose of this exercise, you should also capitalize connecting words like "the" and "of".
 // Remember to use Read-Search-Ask if you get stuck. Write your own code.
 //=============================================================================== ANSWER
-function truncateString(str, num) {
-    // PLEASE SOLVE IT YOURSELF
-    return str;
+String.prototype.replaceAt = function(index, character) {
+  return this.substr(0, index) + character + this.substr(index+character.length);
+};
+
+
+function titleCase(str) {
+  var newTitle = str.split(' ');
+  var updatedTitle = [];
+  for (var st in newTitle) {
+      updatedTitle[st] = newTitle[st].toLowerCase().replaceAt(0, newTitle[st].charAt(0).toUpperCase());
   }
-  
-  truncateString("A-tisket a-tasket A green and yellow basket", 8);
+  return updatedTitle.join(' ');
+}
+
+console.log('the result ', titleCase("I'm a little tea pot"));
 // =============================================================================== TEST
-// truncateString("A-tisket a-tasket A green and yellow basket", 8) should return "A-tisket...".
-// truncateString("Peter Piper picked a peck of pickled peppers", 11) should return "Peter Piper...".
-// truncateString("A-tisket a-tasket A green and yellow basket", "A-tisket a-tasket A green and yellow basket".length) should return "A-tisket a-tasket A green and yellow basket".
-// truncateString("A-tisket a-tasket A green and yellow basket", "A-tisket a-tasket A green and yellow basket".length + 2) should return "A-tisket a-tasket A green and yellow basket".
-// truncateString("A-", 1) should return "A...".
-// truncateString("Absolutely Longer", 2) should return "Ab...".
+// titleCase("I'm a little tea pot") should return a string.
+// titleCase("I'm a little tea pot") should return I'm A Little Tea Pot.
+// titleCase("sHoRt AnD sToUt") should return Short And Stout.
+// titleCase("HERE IS MY HANDLE HERE IS MY SPOUT") should return Here Is My Handle Here Is My Spout
