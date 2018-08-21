@@ -1,27 +1,23 @@
-//==================================================================== RETURN THE LARGEST OF FOUR ARRAY
-// Return an array consisting of the largest number from each provided sub-array. For simplicity, the provided array will contain exactly 4 sub-arrays.
-// Remember, you can iterate through an array with a simple for loop, and access each member with array syntax arr[i].
+//==================================================================== CONFIRM THE ENDING OF A STRING
+// Check if a string (first argument, str) ends with the given target string (second argument, target).
+// This challenge can be solved with the .endsWith() method, which was introduced in ES2015. But for the purpose of this challenge, we would like you to use one of the JavaScript substring methods instead.
 // Remember to use Read-Search-Ask if you get stuck. Write your own code.
 
 //=============================================================================== ANSWER
-function largestOfFour(arr) {
-    let newArray = [];   
-
-    for (let i = 0; i < arr.length; i++){
-        let counter = 0; 
-        for(let j = 0; j = arr[i].length; j++){
-            if(arr[i][j] > counter){
-                counter = arr[i][j];
-            }
-        }
-      newArray.push(counter);
-      }
-    return newArray;
+function confirmEnding(str, target) {
+     return str.endsWith(target);
   }
   
-  console.log(largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]));
+  console.log(confirmEnding("Bastian", "x"));
 // =============================================================================== TEST
-// largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]) should return an array.
-// largestOfFour([[13, 27, 18, 26], [4, 5, 1, 3], [32, 35, 37, 39], [1000, 1001, 857, 1]]) should return [27, 5, 39, 1001].
-// largestOfFour([[4, 9, 1, 3], [13, 35, 18, 26], [32, 35, 97, 39], [1000000, 1001, 857, 1]]) should return [9, 35, 97, 1000000].
-// largestOfFour([[17, 23, 25, 12], [25, 7, 34, 48], [4, -10, 18, 21], [-72, -3, -17, -10]]) should return [25, 48, 21, -3].
+// confirmEnding("Bastian", "n") should return true.
+// confirmEnding("Congratulation", "on") should return true.
+// confirmEnding("Connor", "n") should return false.
+// confirmEnding("Walking on water and developing software from a specification are easy if both are frozen", "specification") should return false.
+// confirmEnding("He has to give me a new name", "name") should return true.
+// confirmEnding("Open sesame", "same") should return true.
+// confirmEnding("Open sesame", "pen") should return false.
+// confirmEnding("Open sesame", "game") should return false.
+// confirmEnding("If you want to save our world, you must hurry. We dont know how much longer we can withstand the nothing", "mountain") should return false.
+// confirmEnding("Abstraction", "action") should return true.
+// Do not use the built-in method .endsWith() to solve the challenge.
