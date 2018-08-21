@@ -1,23 +1,21 @@
-//==================================================================== CONFIRM THE ENDING OF A STRING
-// Check if a string (first argument, str) ends with the given target string (second argument, target).
-// This challenge can be solved with the .endsWith() method, which was introduced in ES2015. But for the purpose of this challenge, we would like you to use one of the JavaScript substring methods instead.
+//==================================================================== REPEAT A STRING A NUMBER OF TIMES
+// Repeat a given string str (first argument) for num times (second argument). Return an empty string if num is not a positive number.
 // Remember to use Read-Search-Ask if you get stuck. Write your own code.
-
 //=============================================================================== ANSWER
-function confirmEnding(str, target) {
-     return str.endsWith(target);
-  }
-  
-  console.log(confirmEnding("Bastian", "x"));
+function repeatStringNumTimes(str, num) {
+    // repeat after me
+    let newStr = '';
+    for(let i = 0; i < num; i++){
+        newStr += `${str}`
+    }
+    return newStr;
+  }  
+  console.log(repeatStringNumTimes("abc", 3));
 // =============================================================================== TEST
-// confirmEnding("Bastian", "n") should return true.
-// confirmEnding("Congratulation", "on") should return true.
-// confirmEnding("Connor", "n") should return false.
-// confirmEnding("Walking on water and developing software from a specification are easy if both are frozen", "specification") should return false.
-// confirmEnding("He has to give me a new name", "name") should return true.
-// confirmEnding("Open sesame", "same") should return true.
-// confirmEnding("Open sesame", "pen") should return false.
-// confirmEnding("Open sesame", "game") should return false.
-// confirmEnding("If you want to save our world, you must hurry. We dont know how much longer we can withstand the nothing", "mountain") should return false.
-// confirmEnding("Abstraction", "action") should return true.
-// Do not use the built-in method .endsWith() to solve the challenge.
+// repeatStringNumTimes("*", 3) should return "***".
+// repeatStringNumTimes("abc", 3) should return "abcabcabc".
+// repeatStringNumTimes("abc", 4) should return "abcabcabcabc".
+// repeatStringNumTimes("abc", 1) should return "abc".
+// repeatStringNumTimes("*", 8) should return "********".
+// repeatStringNumTimes("abc", -2) should return "".
+// The built-in repeat()-method should not be used
