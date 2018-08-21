@@ -1,22 +1,25 @@
-//==================================================================== BOO WHOO
-// Check if a value is classified as a boolean primitive. Return true or false.
-// Boolean primitives are true and false.
-// Remember to use Read-Search-Ask if you get stuck. Try to pair program. Write your own code.
+//==================================================================== TITLE CASE A SENTENCE
+// Return the provided string with the first letter of each word capitalized. Make sure the rest of the word is in lower case.
+// For the purpose of this exercise, you should also capitalize connecting words like "the" and "of".
+// Remember to use Read-Search-Ask if you get stuck. Write your own code.
 //=============================================================================== ANSWER
-function booWho(bool) {
- 
-  return  typeof bool === 'boolean';
+String.prototype.replaceAt = function(index, character) {
+  return this.substr(0, index) + character + this.substr(index+character.length);
+};
+
+
+function titleCase(str) {
+  var newTitle = str.split(' ');
+  var updatedTitle = [];
+  for (var st in newTitle) {
+      updatedTitle[st] = newTitle[st].toLowerCase().replaceAt(0, newTitle[st].charAt(0).toUpperCase());
+  }
+  return updatedTitle.join(' ');
 }
 
-console.log('result: ',booWho(true));
+console.log('the result ', titleCase("I'm a little tea pot"));
 // =============================================================================== TEST
-// booWho(true) should return true.
-// booWho(false) should return true.
-// booWho([1, 2, 3]) should return false.
-// booWho([].slice) should return false.
-// booWho({ "a": 1 }) should return false.
-// booWho(1) should return false.
-// booWho(NaN) should return false.
-// booWho("a") should return false.
-// booWho("true") should return false.
-// booWho("false") should return false.
+// titleCase("I'm a little tea pot") should return a string.
+// titleCase("I'm a little tea pot") should return I'm A Little Tea Pot.
+// titleCase("sHoRt AnD sToUt") should return Short And Stout.
+// titleCase("HERE IS MY HANDLE HERE IS MY SPOUT") should return Here Is My Handle Here Is My Spout
