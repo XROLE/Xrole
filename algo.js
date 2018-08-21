@@ -7,15 +7,19 @@
 function largestOfFour(arr) {
     let newArray = [];
     let counter = 0;
-    for (let i = 0; i < arr.length; i++){
-    //     for(let j = 0; j = arr[i].length; j++){
-    //         if(arr[i][j].length > counter){
-    //             counter = arr[i][j].length;
-    //         }
-    //     }
-    //   newArray.push(counter);
-    return arr[i]
-    }
+    arr.foreach((childArray) => {
+        return childArray;
+    })
+
+    // for (let i = 0; i < arr.length; i++){
+    // //     for(let j = 0; j = arr[i].length; j++){
+    // //         if(arr[i][j].length > counter){
+    // //             counter = arr[i][j].length;
+    // //         }
+    // //     }
+    // //   newArray.push(counter);
+    // return arr[i]
+    // }
     // return newArray;
   }
   
