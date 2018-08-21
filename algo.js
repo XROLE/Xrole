@@ -1,21 +1,17 @@
-//==================================================================== REPEAT A STRING A NUMBER OF TIMES
-// Repeat a given string str (first argument) for num times (second argument). Return an empty string if num is not a positive number.
+//==================================================================== TRUNCATING A STRING
+// Truncate a string (first argument) if it is longer than the given maximum string length (second argument). Return the truncated string with a ... ending.
 // Remember to use Read-Search-Ask if you get stuck. Write your own code.
 //=============================================================================== ANSWER
-function repeatStringNumTimes(str, num) {
-    // repeat after me
-    let newStr = '';
-    for(let i = 0; i < num; i++){
-        newStr += `${str}`
-    }
-    return newStr;
-  }  
-  console.log(repeatStringNumTimes("abc", 3));
+function truncateString(str, num) {
+    // PLEASE SOLVE IT YOURSELF
+    return str;
+  }
+  
+  truncateString("A-tisket a-tasket A green and yellow basket", 8);
 // =============================================================================== TEST
-// repeatStringNumTimes("*", 3) should return "***".
-// repeatStringNumTimes("abc", 3) should return "abcabcabc".
-// repeatStringNumTimes("abc", 4) should return "abcabcabcabc".
-// repeatStringNumTimes("abc", 1) should return "abc".
-// repeatStringNumTimes("*", 8) should return "********".
-// repeatStringNumTimes("abc", -2) should return "".
-// The built-in repeat()-method should not be used
+// truncateString("A-tisket a-tasket A green and yellow basket", 8) should return "A-tisket...".
+// truncateString("Peter Piper picked a peck of pickled peppers", 11) should return "Peter Piper...".
+// truncateString("A-tisket a-tasket A green and yellow basket", "A-tisket a-tasket A green and yellow basket".length) should return "A-tisket a-tasket A green and yellow basket".
+// truncateString("A-tisket a-tasket A green and yellow basket", "A-tisket a-tasket A green and yellow basket".length + 2) should return "A-tisket a-tasket A green and yellow basket".
+// truncateString("A-", 1) should return "A...".
+// truncateString("Absolutely Longer", 2) should return "Ab...".
