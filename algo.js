@@ -1,25 +1,20 @@
-//==================================================================== TITLE CASE A SENTENCE
-// Return the provided string with the first letter of each word capitalized. Make sure the rest of the word is in lower case.
-// For the purpose of this exercise, you should also capitalize connecting words like "the" and "of".
+//==================================================================== SPLICE AND SLICE
+// You are given two arrays and an index.
+// Use the array methods slice and splice to copy each element of the first array into the second array, in order.
+// Begin inserting elements at index n of the second array.
+// Return the resulting array. The input arrays should remain the same after the function runs.
 // Remember to use Read-Search-Ask if you get stuck. Write your own code.
 //=============================================================================== ANSWER
-String.prototype.replaceAt = function(index, character) {
-  return this.substr(0, index) + character + this.substr(index+character.length);
-};
-
-
-function titleCase(str) {
-  var newTitle = str.split(' ');
-  var updatedTitle = [];
-  for (var st in newTitle) {
-      updatedTitle[st] = newTitle[st].toLowerCase().replaceAt(0, newTitle[st].charAt(0).toUpperCase());
-  }
-  return updatedTitle.join(' ');
+function frankenSplice(arr1, arr2, n) {
+  // It's alive. It's alive!
+  return arr2.splice(0, 1, 4);
 }
 
-console.log('the result ', titleCase("I'm a little tea pot"));
+console.log('   ',frankenSplice([1, 2, 3], [4, 5, 6], 1));
 // =============================================================================== TEST
-// titleCase("I'm a little tea pot") should return a string.
-// titleCase("I'm a little tea pot") should return I'm A Little Tea Pot.
-// titleCase("sHoRt AnD sToUt") should return Short And Stout.
-// titleCase("HERE IS MY HANDLE HERE IS MY SPOUT") should return Here Is My Handle Here Is My Spout
+// frankenSplice([1, 2, 3], [4, 5], 1) should return [4, 1, 2, 3, 5].
+// frankenSplice([1, 2], ["a", "b"], 1) should return ["a", 1, 2, "b"].
+// frankenSplice(["claw", "tentacle"], ["head", "shoulders", "knees", "toes"], 2) should return ["head", "shoulders", "claw", "tentacle", "knees", "toes"].
+// All elements from the first array should be added to the second array in their original order.
+// The first array should remain the same after the function runs.
+// The second array should remain the same after the function runs.
