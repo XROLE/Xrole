@@ -1,14 +1,25 @@
-//==================================================================== FIND ELEMENT
-// Create a function that looks through an array (first argument) and returns the first element in the array that passes a truth test (second argument). If no element passes the test, return undefined.
-// Remember to use Read-Search-Ask if you get stuck. Try to pair program. Write your own code.
+//==================================================================== FALSY BOUNCER
+// Remove all falsy values from an array.
+// Falsy values in JavaScript are false, null, 0, "", undefined, and NaN.
+// Hint: Try converting each value to a Boolean.
+// Remember to use Read-Search-Ask if you get stuck. Write your own code.
 //=============================================================================== ANSWER
-function findElement(arr, func) {
-  let passedWord = arr.filter(func);
-  return passedWord[0];
+function bouncer(arr) {
+  // Don't show a false ID to this bouncer.
+  const newArray = []
+  const unWantedValues = [false, null, 0, "", undefined, NaN];
+  for (let i = 0; i < arr.length; i++){
+    if(unWantedValues.includes(arr[i]) == false){
+      newArray.push(arr[i])
+    }
+  }
+  return newArray;
 }
 
-console.log('>>>>>>>>>>>>>>', findElement([1, 2, 3, 4], num => num % 2 === 0));
+console.log('>>>>>>>',bouncer([7, "ate", "", false, 9]));
 
 // =============================================================================== TEST
-// findElement([1, 3, 5, 8, 9, 10], function(num) { return num % 2 === 0; }) should return 8.
-// findElement([1, 3, 5, 9], function(num) { return num % 2 === 0; }) should return undefined.
+// bouncer([7, "ate", "", false, 9]) should return [7, "ate", 9].
+// bouncer(["a", "b", "c"]) should return ["a", "b", "c"].
+// bouncer([false, null, 0, NaN, undefined, ""]) should return [].
+// bouncer([1, null, NaN, 2, undefined]) should return [1, 2]
