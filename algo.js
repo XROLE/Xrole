@@ -1,20 +1,23 @@
-//==================================================================== SPLICE AND SLICE
-// You are given two arrays and an index.
-// Use the array methods slice and splice to copy each element of the first array into the second array, in order.
-// Begin inserting elements at index n of the second array.
-// Return the resulting array. The input arrays should remain the same after the function runs.
+//==================================================================== TRUNCATE A STRING
+// Truncate a string (first argument) if it is longer than the given maximum string length (second argument). Return the truncated string with a ... ending.
 // Remember to use Read-Search-Ask if you get stuck. Write your own code.
 //=============================================================================== ANSWER
-function frankenSplice(arr1, arr2, n) {
-  // It's alive. It's alive!
-  return arr2.splice(0, 1, 4);
+function truncateString(str, num) {
+  // Clear out that junk in your trunk
+  if(num < str.length){
+    return str.slice(0, num) + '...';
+  }
+  return str;
 }
 
-console.log('   ',frankenSplice([1, 2, 3], [4, 5, 6], 1));
+console.log(truncateString("A-tisket a-tasket A green and yellow basket", 8));
+
 // =============================================================================== TEST
-// frankenSplice([1, 2, 3], [4, 5], 1) should return [4, 1, 2, 3, 5].
-// frankenSplice([1, 2], ["a", "b"], 1) should return ["a", 1, 2, "b"].
-// frankenSplice(["claw", "tentacle"], ["head", "shoulders", "knees", "toes"], 2) should return ["head", "shoulders", "claw", "tentacle", "knees", "toes"].
-// All elements from the first array should be added to the second array in their original order.
-// The first array should remain the same after the function runs.
-// The second array should remain the same after the function runs.
+// truncateString("A-tisket a-tasket A green and yellow basket", 8) should return "A-tisket...".
+// truncateString("Peter Piper picked a peck of pickled peppers", 11) should return "Peter Piper...".
+// truncateString("A-tisket a-tasket A green and yellow basket", "A-tisket a-tasket A green and yellow basket".length) should return "A-tisket a-tasket A green and yellow basket".
+// truncateString("A-tisket a-tasket A green and yellow basket", "A-tisket a-tasket A green and yellow basket".length + 2) should return "A-tisket a-tasket A green and yellow basket".
+// truncateString("A-", 1) should return "A...".
+// truncateString("Absolutely Longer", 2) should return "Ab...".
+
+console.log(truncateString("A-tisket a-tasket A green and yellow basket", "A-tisket a-tasket A green and yellow basket".length + 2));
