@@ -1,25 +1,21 @@
-//==================================================================== MUTATIONS
-// Return true if the string in the first element of the array contains all of the letters of the string in the second element of the array.
-// For example, ["hello", "Hello"], should return true because all of the letters in the second string are present in the first, ignoring case.
-// The arguments ["hello", "hey"] should return false because the string "hello" does not contain a "y".
-// Lastly, ["Alien", "line"], should return true because all of the letters in "line" are present in "Alien".
-// Remember to use Read-Search-Ask if you get stuck. Write your own code..
+//==================================================================== CHUNKY MONKEY
+// Write a function that splits an array (first argument) into groups the length of size (second argument) and returns them as a two-dimensional array.
+// Remember to use Read-Search-Ask if you get stuck. Write your own code.
 //=============================================================================== ANSWER
-function mutation(arr) {
-  return arr[0].toLowerCase().includes(arr[1].toLowerCase());
+function chunkArrayInGroups(arr, size) {
+  // Break it up.
+  // NOT SOLVED YET
+  return arr;
+  
 }
 
-console.log(mutation(["hello", "Hel"]));
-
-
+chunkArrayInGroups(["a", "b", "c", "d"], 2);
 
 // =============================================================================== TEST
-// mutation(["hello", "hey"]) should return false.
-// mutation(["hello", "Hello"]) should return true.
-// mutation(["zyxwvutsrqponmlkjihgfedcba", "qrstu"]) should return true.
-// mutation(["Mary", "Army"]) should return true.
-// mutation(["Mary", "Aarmy"]) should return true.
-// mutation(["Alien", "line"]) should return true.
-// mutation(["floor", "for"]) should return true.
-// mutation(["hello", "neo"]) should return false.
-// mutation(["voodoo", "no"]) should return false.
+// chunkArrayInGroups(["a", "b", "c", "d"], 2) should return [["a", "b"], ["c", "d"]].
+// chunkArrayInGroups([0, 1, 2, 3, 4, 5], 3) should return [[0, 1, 2], [3, 4, 5]].
+// chunkArrayInGroups([0, 1, 2, 3, 4, 5], 2) should return [[0, 1], [2, 3], [4, 5]].
+// chunkArrayInGroups([0, 1, 2, 3, 4, 5], 4) should return [[0, 1, 2, 3], [4, 5]].
+// chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6], 3) should return [[0, 1, 2], [3, 4, 5], [6]].
+// chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 4) should return [[0, 1, 2, 3], [4, 5, 6, 7], [8]].
+// chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 2) should return [[0, 1], [2, 3], [4, 5], [6, 7], [8]].
