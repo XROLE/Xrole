@@ -1,41 +1,27 @@
-//==================================================================== DIFF TWO ARRAYS
-// Compare two arrays and return a new array with any items only found in one of the two given arrays, but not both. In other words, return the symmetric difference of the two arrays.
-// Remember to use Read-Search-Ask if you get stuck. Try to pair program. Write your own code.
+//==================================================================== SEEKK AND DESTROY
+// You will be provided with an initial array (the first argument in the destroyer function), followed by one or more arguments. Remove all elements from the initial array that are of the same value as these arguments.
 // Note
-// You can return the array with its elements in any order
+// You have to use the arguments object.
+// Remember to use Read-Search-Ask if you get stuck. Write your own code.
 //=============================================================================== ANSWER
-function diffArray(arr1, arr2) {
-    var newArr = [];
-    // Same, same; but different.
-    for(let i = 0; i <arr2.length; i++){
-        if(!arr1.includes(arr2[i])){
-            newArr.push(arr2[i])
-        }
-    }
-    for(let i = 0; i <arr1.length; i++){
-        if(!arr2.includes(arr1[i])){
-            newArr.push(arr1[i])
-        }
-    }
-    
-    return newArr;
+// function destroyer(arr) {
+//     // Remove all the values
+//     const firstArr = arguments[0];
+
+//     return arr;
+//   }
+function destroyer(arr) {
+  const arrs = [...arguments];
+  const newArr = arrs.slice(1);
+  return arr.filter(x => newArr.indexOf(x) === -1);
   }
   
-  console.log('>>>>>>>>',diffArray([1, 2, 3, 5, 9], [1, 2, 3, 4, 5]));
+  console.log(destroyer([1, 2, 3, 1, 2, 3], 2, 3));
   
   // =============================================================================== TEST
-//   diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]) should return an array.
-//   ["diorite", "andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"] should return ["pink wool"].
-//   ["diorite", "andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"] should return an array with one item.
-//   ["andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"] should return ["diorite", "pink wool"].
-//   ["andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"] should return an array with two items.
-//   ["andesite", "grass", "dirt", "dead shrub"], ["andesite", "grass", "dirt", "dead shrub"] should return [].
-//   ["andesite", "grass", "dirt", "dead shrub"], ["andesite", "grass", "dirt", "dead shrub"] should return an empty array.
-//   [1, 2, 3, 5], [1, 2, 3, 4, 5] should return [4].
-//   [1, 2, 3, 5], [1, 2, 3, 4, 5] should return an array with one item.
-//   [1, "calf", 3, "piglet"], [1, "calf", 3, 4] should return ["piglet", 4].
-//   [1, "calf", 3, "piglet"], [1, "calf", 3, 4] should return an array with two items.
-//   [], ["snuffleupagus", "cookie monster", "elmo"] should return ["snuffleupagus", "cookie monster", "elmo"].
-//   [], ["snuffleupagus", "cookie monster", "elmo"] should return an array with three items.
-//   [1, "calf", 3, "piglet"], [7, "filly"] should return [1, "calf", 3, "piglet", 7, "filly"].
-//   [1, "calf", 3, "piglet"], [7, "filly"] should return an array with six items.
+//   destroyer([1, 2, 3, 1, 2, 3], 2, 3) should return [1, 1].
+//   destroyer([1, 2, 3, 5, 1, 2, 3], 2, 3) should return [1, 5, 1].
+//   destroyer([3, 5, 1, 2, 2], 2, 3, 5) should return [1].
+//   destroyer([2, 3, 2, 3], 2, 3) should return [].
+//   destroyer(["tree", "hamburger", 53], "tree", 53) should return ["hamburger"].
+//   destroyer(["possum", "trollo", 12, "safari", "hotdog", 92, 65, "grandma", "bugati", "trojan", "yacht"], "yacht", "possum", "trollo", "safari", "hotdog", "grandma", "bugati", "trojan") should return [12,92,65].
