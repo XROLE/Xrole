@@ -9,9 +9,12 @@ Example:
 
 */
 function isIsogram(word){
-    Array.from(new Set(word));
+    // Array.from(new Set(word));
+    const man = new Set(word);
+    console.log('>>>>>', man.size);
+    return man;
      
 }
 
-console.log(">>>>", isIsogram('mamaebuka'));
+console.log(">>>>", isIsogram([1, 3, 5, 8,4, 3, 2,1, 2, 4, 1,6]));
 
