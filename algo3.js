@@ -8,12 +8,22 @@ Create a funtion called isIsogram that takes one argument, a word to test if it'
 Example:
 
 */
+// function isIsogram(word){
+//     if(word.length !== new Set(word).size){
+//         return false;
+//     }    
+//     return true;
+// }
+
+// console.log(">>>>", isIsogram('dermogaphics'));
 function isIsogram(word){
-    if(word.length !== new Set(word).size){
+    if(word == '' | !word){
+        return true;
+        }else if(word.length !== new Set(word).size){
         return false;
     }    
     return true;
 }
 
-console.log(">>>>", isIsogram('dermogaphics'));
+console.log(">>>>", isIsogram('tramadol'));
 
