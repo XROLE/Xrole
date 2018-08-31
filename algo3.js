@@ -18,7 +18,7 @@ Example:
 // console.log(">>>>", isIsogram('dermogaphics'));
 function isIsogram(word){
     if(word == '' | !word){
-        return true;
+        return false;
         }else if(word.length !== new Set(word).size){
         return false;
     }    
