@@ -1,17 +1,31 @@
-// ========================================== POWER RECURSION
-// Write a function named power that accepts two arguments, a and b and calculates a raised to the power b.
-// Example
-// power(2, 3) => 8
-// Note: Don't use
-// 2 ** 3
-// and don't use
-// Math.pow(2, 3)
+// ========================================== LONGEST WORD/
+Write a function called longest which will take a string of space separated words and will return the longest one.
+    // For example:
+    // longest("This is Andela")
+    // returns
+    // "Andela"
+    // and
+    // longest("Brilliance is evenly distributed")
+    // returns
+    // distributed
     // =============================================== ANSWERS
-    let power = (a,b) => { 
-        if (b <= 1) {
-            return a;
-        } else {
-            return a * power(a, b-1); 
-        }
-    };
-    console.log(power(3, 4));
+   
+    function longest(sentence){
+        let arr = sentence.split(' ');
+        let numArr = [];
+        let result;
+        arr.map(l => {
+            numArr.push(l.length);
+        });
+        let max = numArr.reduce(function(a, b) {
+            return Math.max(a, b);
+        });
+        arr.map(l => {
+            if(l.length === max) {
+                result = l;
+            }
+        });
+        
+        return result;
+      }
+      
