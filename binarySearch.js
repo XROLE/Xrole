@@ -7,12 +7,8 @@ function naiveSearch(long, short){
 
   for(let i = 0; i < long.length; i++){
     for(let j = 0; j < short.length; j++){
-      if(long[i + j] !== short[j]){
-        break;
-      }
-      if(j === short.length - 1){
-        count++;
-      };
+      if(long[i + j] !== short[j]) break;
+      if(j === short.length - 1) count++;
     }
   }
 
@@ -20,4 +16,4 @@ function naiveSearch(long, short){
 }
 
 
-console.log('count: ', naiveSearch('jamesguesitshegatitwithme', 'it'));
+console.log('count: ', naiveSearch('itjamesguesitshegatitwithme', 'it'));
