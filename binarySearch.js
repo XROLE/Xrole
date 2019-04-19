@@ -1,19 +1,16 @@
-// // write a function that takes in two strings as argument
-// the function should return the number of times the smaller
-// string pattern match the larger string.
+// BUBLE SORT
 
-function naiveSearch(long, short){
-  let count = 0;
-
-  for(let i = 0; i < long.length; i++){
-    for(let j = 0; j < short.length; j++){
-      if(long[i + j] !== short[j]) break;
-      if(j === short.length - 1) count++;
+const bubbleSort = ((arr) => {
+  for(let i = arr.length; i > 0; i--){
+    for( j = 0; j < i -1; j++){
+      if(arr[j] > arr[j+1]){
+      let store = arr[j];
+        arr[j] = arr[j + 1];
+        arr[j+1] = store;
+      };
     }
   }
+  return arr;
+})([5, 4, 3, 7, 8, 1, 0, 20, 30, 25]);
 
-  return count;
-}
-
-
-console.log('count: ', naiveSearch('itjamesguesitshegatitwithme', 'it'));
+console.log('bubleSort: ', bubbleSort);
