@@ -55,3 +55,17 @@
 // In the first test case, there are  prisoners,  sweets and they are passed out starting at chair . The candies go all around twice and there are  more candies passed to each prisoner from seat  to seat .
 
 // In the second test case, there are  prisoners,  candies and they are passed out starting at seat . They go around twice, and there is one more to pass out to the prisoner at seat .
+
+
+function saveThePrisoner(n, m, s) {
+  const loopPoint = (m % n) + s - 1;
+  if(loopPoint === 0){
+    return n;
+  }
+  let position = loopPoint;
+  if(loopPoint > n){
+    return position = loopPoint - n;
+  }
+  return position;
+}
+console.log(saveThePrisoner(3, 15, 1))
